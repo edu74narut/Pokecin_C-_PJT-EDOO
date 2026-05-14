@@ -27,7 +27,6 @@ int main(){
     ataque["Rosnar"] = {0, "Normal", 100};
     ataque["Conversao"] = {0, "Normal", 100};
     ataque["Pancada Corporal"] = {85,"Normal",100};
-    ataque["Ataque Rapido"] = {40, "Normal", 100};
     ataque["Cabecada"] = {70,"Normal", 100};
     ataque["Pisar"] = {65,"Normal", 100};
     ataque["Estrondo Sonico"] = {20, "Normal", 90};
