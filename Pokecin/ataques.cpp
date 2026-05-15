@@ -1,15 +1,8 @@
-#include <map>
-#include <string>
-
-struct Ataque{
-    int poder;
-    std::string tipo;
-    int precisao;
-};
-
-int main(){
+#include "ataques.hpp"
+    
+std::map<std::string, Ataque> inicializarAtaques(){
     std::map<std::string, Ataque> ataque;
-
+    
     // Golpes do tipo Normal
     ataque["Investida"] = {40, "Normal", 100};
     ataque["Arranhao"] = {40, "Normal", 100};
@@ -103,7 +96,10 @@ int main(){
     // Golpe do tipo Dragão
     ataque["Garra de Dragão"] = {80,"Dragao",100};
     ataque["Ultraje"]={120,"Dragao",100};
+
+    return ataque;
+}
+
     
-    return 0;
-};
+    
 
