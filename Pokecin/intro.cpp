@@ -1,6 +1,7 @@
 #include "intro.hpp"
 #include <iostream>
 #include <vector>
+#include "cores.hpp"
 
 void pausarParaEnter() {
     std::cout << " [Aperte ENTER]";
@@ -23,13 +24,14 @@ std::string introPokemonEscolher(std::string& nome){
         "Mas primeiro, diga-me algo sobre você."
     };
 
-    for (const auto& fala : falas_intro) {
-        std::cout << "Prof. EDOO: " << fala;
+    for (const auto& fala : falas_intro) 
+    {
+        std::cout << YELLOW << "Prof. EDOO: " << RESET << CYAN << fala << RESET;
         pausarParaEnter();
     }
 
     // Pegando nome
-    std::cout << "\nQual o seu nome?" << "\n";
+    std::cout << GREEN << "\n* Qual o seu nome? => " << RESET;
     std::getline(std::cin, nome);
 
     // Roteiro pós pegar nome
@@ -44,17 +46,19 @@ std::string introPokemonEscolher(std::string& nome){
         "Estarei esperando por você!"
     };
 
-    for(const auto& fala: falas_posPokemon){
-        std::cout<<"Prof. EDOO: " << fala;
+    for(const auto& fala: falas_posPokemon)
+    {
+        std::cout << YELLOW << "Prof. EDOO: " << RESET << CYAN << fala << RESET;
         pausarParaEnter();
     }
 
     // Escolhendo o pokemon
-    while(pokemon != "soim" && pokemon != "flamare" && pokemon != "caprio"){
-        std::cout << "\nEscolher Pokémon" << "\n";
-        std::cout << "soim - flamare - caprio" << "\n";
+    while(pokemon != "soim" && pokemon != "flamare" && pokemon != "caprio")
+    {
+        std::cout << CYAN << "\n=== Escolha seu Pokémon Inicial ===" << RESET << "\n";
+        std::cout << "Opções: " << GREEN << "soim" << RESET << " - " << RED << "flamare" << RESET << " - " << CYAN << "caprio" << RESET << "\n";
+        std::cout << "* Digite sua escolha => ";
         std::cin >> pokemon;
-        std::cin.ignore();
 
         // Garantindo que a string esteja igual no dicionário, toda em minúscula
         for(char &letra:pokemon){
@@ -62,8 +66,9 @@ std::string introPokemonEscolher(std::string& nome){
         }
 
         // Verificação pra não colocar pokémon inválido
-        if (pokemon != "soim" && pokemon != "flamare" && pokemon != "caprio") {
-            std::cout << "\n[ERRO] Esse Pokémon não está na mesa do Prof. EDOO! Tente novamente.\n\n";
+        if (pokemon != "soim" && pokemon != "flamare" && pokemon != "caprio")  
+        {
+        std::cout << RED << "\n[ERRO] Esse Pokémon não está na mesa do Prof. EDOO! Tente novamente.\n" << RESET;
         }
     }
 

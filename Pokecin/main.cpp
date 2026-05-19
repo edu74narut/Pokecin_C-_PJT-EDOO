@@ -1,7 +1,9 @@
 #include "jogo.hpp"
 #include <iostream>
+#include <clocale>
 
 int main() {
+    setlocale(LC_ALL, "pt_BR.UTF-8");
     std::string nome_treinador;
 
     // intro
