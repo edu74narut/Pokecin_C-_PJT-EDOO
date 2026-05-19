@@ -11,5 +11,8 @@
 // Todos os arquivos .hpp para organização
 #include "intro.hpp"
 #include "ataques.hpp"
+#include "pokemon.hpp"
+#include "inventario.hpp"
+#include "batalha.hpp"
 
 #endif
