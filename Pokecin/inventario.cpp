@@ -6,6 +6,7 @@ Inventario::Inventario(int qtdPocoes, int qtdPokebolas)
 {
     pocoes = qtdPocoes;
     pokebolas = qtdPokebolas;
+    int insignias = 0;
 }
 
 // Retorna quantas poções eu tenho pra exibir no menu da batalha
@@ -37,5 +38,19 @@ bool Inventario::usarPokebola() {
     {
         std::cout << "\n[Aviso] Suas Pokébolas acabaram!\n";
         return false;
+    }
+}
+
+void Inventario::adicionarItem(const std::string& nome_item, int quantidade) {
+    if(nome_item == "Poção de Vida") {
+        pocoes += quantidade;
+    } else if(nome_item == "Pokebola") {
+        pokebolas += quantidade;
+    } else if(nome_item == "Grande Bola") {
+        pokebolas += quantidade;
+    } else if(nome_item == "Ultra Bola") {
+        pokebolas += quantidade;
+    } else if(nome_item == "Insígnia") {
+        insignias += quantidade;
     }
 }
